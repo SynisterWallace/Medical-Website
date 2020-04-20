@@ -19,7 +19,7 @@
           </div>
           <div class="form-group">
             <label for="password">Nomor Telepon</label>
-            <input type="text" class="form-control" id="nomor_telpon" name="nomor_telpons">
+            <input type="text" class="form-control" id="nomor_telpon" name="nomor_telpon">
           </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="checkbox_policy">
