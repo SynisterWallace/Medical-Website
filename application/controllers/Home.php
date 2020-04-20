@@ -5,20 +5,26 @@ class Home extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('User_model');
-		$this->load->model('Barang_model');
 	}
 
 	public function index(){
-		$data['title'] = 'Siskom Gunung';
+		$data['title'] = 'Dental Care';
 		$this->load->view('templates/header', $data);
 		$this->load->view('home/home');
 		$this->load->view('templates/footer');
 	}
 
 	public function viewlogin(){
-		$data['title'] = 'My Account';
+		$data['title'] = 'Login';
 		$this->load->view('templates/header', $data);
 		$this->load->view('home/index');
+		$this->load->view('templates/footer');	
+	}
+
+	public function viewRegister(){
+		$data['title'] = 'Registrasi';
+		$this->load->view('templates/header', $data);
+		$this->load->view('home/register');
 		$this->load->view('templates/footer');	
 	}
 
@@ -99,7 +105,8 @@ class Home extends CI_Controller{
 				'email' => $data->email,
 				'username' => $data->username,
 				'nama' => $data->nama,
-				'alamat' => $data->alamat
+				'alamat' => $data->alamat,
+				'nomor_telpon' => $data->nomor_telpon
 			);
 
 			$this->session->set_userdata($datauser);
@@ -114,6 +121,7 @@ class Home extends CI_Controller{
 
 		$this->form_validation->set_rules('email', 'email', 'required|is_unique[user.email]');
 		$this->form_validation->set_rules('password', 'password', 'required');
+		$this->form_validation->set_rules('nomor_telpon', 'nomor_telpon', 'required');
 
 		if($this->form_validation->run() == FALSE){
 			redirect(base_url());
@@ -121,6 +129,7 @@ class Home extends CI_Controller{
 			$data = [
 				"email" =>$this->input->post('email', TRUE),
 				"password" =>$this->input->post('password', TRUE),
+				"nomor_telpon" =>$this->input->post('nomor_telpon', TRUE),
 			];
 
 			$this->User_model->insert($data);
