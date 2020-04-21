@@ -36,7 +36,9 @@ class Home extends CI_Controller{
 	}
 	public function viewprofile(){
 
-		$data['title'] = 'My Account';
+		$this->load->model('User_model');
+		$data['title'] = 'Akun Saya';
+		$data['user']=$this->User_model->getuser($this->session->userdata('username_or_email'));
 		$this->load->view('templates/header', $data);
 		$this->load->view('home/profile');
 		$this->load->view('templates/footer');

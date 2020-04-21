@@ -21,7 +21,7 @@
             .baner-content {
               padding-top: 30vh;
               text-align: center;
-              background-image: url(../img/Bromo.jpg);
+              background-image: url(../img/img7.jpg);
             }
 
             .baner-content h1 {
@@ -74,25 +74,27 @@
 
 <body>
 
-  <!--  <div class="fixed-side-navbar">
-        <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#home"><span>Intro</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#services"><span>Services</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio"><span>Portfolio</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#our-story"><span>Our Story</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact-us"><span>Contact Us</span></a></li>
-        </ul>
-    </div> -->
+
 
     <div class="parallax-content baner-content" id="home">
-        <div class="container">
-            <div class="first-content">
+        <div class="container" >
+            <div class="row">
+              <div class="col-md-8 first-content" style="text-align:left; padding-top:6em;" >
                 <?php $str=explode('@',$this->session->userdata('email'))?>
-                <h1 style="font-size: 75px">Welcome <?php echo $str[0] ;  ?> </h1>
-                <span><em>Mountain</em> Pathfinder</span>
-                <div class="primary-button">
-                    <a href="#services">Discover More</a>
+                <h1 style="font-size: 50px; color:#FF8C00;">Selamat Datang  <?php echo $str[0] ;  ?> </h1>
+                <span><em>Dental</em> Care</span>
+              </div>
+              <div class="col">
+                <div class="row bg-light" style="opacity:80%; margin-bottom:1em; padding-top:2vh; padding-bottom:2vh;">
+                  <a class="offset-md-1"><b>Konsultasi</b></a>
                 </div>
+                <div class="row bg-light" style="opacity:80%; margin-bottom:1em; padding-top:2vh; padding-bottom:2vh;">
+                  <a class="offset-md-1"><b>Temukan Dokter</b></a>
+                </div>
+                <div class="row bg-light" style="opacity:80%; margin-bottom:1em; padding-top:2vh; padding-bottom:2vh;">
+                  <a class="offset-md-1"><b>Buat Janji<b></a>
+                </div>
+              </div>
             </div>
         </div>
     </div>
@@ -145,7 +147,7 @@
     </div>
 
     
-    <div class="overlay"></div>
+   <!-- <div class="overlay"></div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -183,7 +185,7 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
+</div> -->
 
 
     <div class="tabs-content" id="our-story">
