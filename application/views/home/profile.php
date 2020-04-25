@@ -39,11 +39,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
       <div class="col data" style="padding-left: 3em;">
         <?php foreach ($user as $key) { 
-          if($key->firstname!=null) $first=$key->firstname;
+          if($key->email!=null) $first=$key->email;
           else $first='';
-          if($key->lastname!=null) $last=$key->lastname;
+          if($key->nama!=null) $last=$key->nama;
           else $last='';
-          if($key->username!=null) $uname=$key->username;
+          if($key->alamat!=null) $uname=$key->alamat;
           else$uname="";
           ?>
    

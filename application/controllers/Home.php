@@ -38,7 +38,7 @@ class Home extends CI_Controller{
 
 		$this->load->model('User_model');
 		$data['title'] = 'Akun Saya';
-		$data['user']=$this->User_model->getuser($this->session->userdata('username_or_email'));
+		$data['user']=$this->User_model->getuser($this->session->userdata('email'));
 		$this->load->view('templates/header', $data);
 		$this->load->view('home/profile');
 		$this->load->view('templates/footer');
