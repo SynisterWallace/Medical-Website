@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2020 at 01:13 PM
+-- Generation Time: Apr 25, 2020 at 01:27 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -21,6 +21,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `dbmed`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(12) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `username` varchar(15) NOT NULL,
+  `password` varchar(15) NOT NULL,
+  `nama` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `email`, `username`, `password`, `nama`) VALUES
+(0, 'admin@gmail.com', 'admin', 'admin', 'Cindy');
 
 -- --------------------------------------------------------
 
