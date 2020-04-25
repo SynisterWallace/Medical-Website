@@ -23,6 +23,7 @@ class Admin_model extends CI_model{
 
 		return $valid;
 	}
+<<<<<<< HEAD
 
 	public function tampil_data_pelanggan(){
         return $this->db->get('pelanggan');
@@ -50,6 +51,8 @@ class Admin_model extends CI_model{
         return $result;
 	}
 	
+=======
+>>>>>>> 57376f34ca8633d86477a66585d42ffc8e28a258
 }
 
 ?>
