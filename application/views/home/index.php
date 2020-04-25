@@ -7,7 +7,7 @@
       <div class="col" style="background-image:url('../img/img6.jpg');">
         
       </div>
-      <div class="col-md-4 py-3  border border-white rounded" style="margin-top: 9em; margin-bottom: 9.5em; background-color:#FFFFFF;" >
+      <div class="col-md-4 py-3  border border-white rounded" style="margin-top: 9em; background-color:#FFFFFF;" >
       <h5 style="font-weight: bolder; color: black; padding-left: 5em;"><strong>Masuk untuk melanjutkan</strong></h5></br>
         <?= form_open(base_url('Home/login')); ?>
         <form method="post">
@@ -28,10 +28,19 @@
             </div>
             
           </div>
-          <div class="form-group">
+          <div class="form-group" style="margin-bottom:9em;">
           <p style="font-size:15px; padding-left:9em;">Belum punya akun? <a href="<?php echo base_url().'Home/viewRegister';?>" style="color: #800000; text-decoration: none; font-size:18px;"><small><u>Daftar Disni</u></small></a></p>
             
           </div>
+          <div class="row">
+          <div class="col-md-2" style="background-color:#00CED9; border-radius:15px; margin-left:18em;">
+            <a href="" style="color: white; text-decoration: none;" onmouseover="this.style.color='red'"onmouseout="this.style.color='white'">Dokter</a>
+          </div>
+          <div class="col-md-2" style="background-color:#00CED9; border-radius:15px; margin-left:0.25vh">
+            <a href="<?php echo base_url().'Home/adminlogin';?>" style="color: white; text-decoration: none;" onmouseover="this.style.color='red'"onmouseout="this.style.color='white'">Admin</a>
+          </div>
+          </div>
+
         </form>
       </div>
     </div>

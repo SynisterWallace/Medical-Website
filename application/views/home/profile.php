@@ -30,6 +30,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <p style="color: grey; font-size: 23px;"></p>
       </div>
     </div>
+    <div class="col-9 data" style="padding-left: 7em;">
+          <?php $str=explode('@',$this->session->userdata('email'))?>
+        <div class="row">
+          <p>Halo <?php echo $str[0];?>(Bukan <?php echo $str[0];?>? <a href="<?php echo site_url()."Home/logout"?>">Keluar</a>)
+          </p>
+        </div>
+        <div class="row">
+          <p></p>
+
+        </div>
+        <div class="row"></div>
+        
+      </div>
     <div class="row" style="padding-left: 15vh; padding-right: 20vh; margin-top: 10vh;">
       <div class="col-3">
         <a href="<?php echo site_url()."Home/logout"?>" style="text-decoration:none;background-color: none; color: #222;">
@@ -53,20 +66,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <form action="<?php echo base_url().'/Home/updateprofile';?>" method="post">
           <div class="row">
             <div class="col">
-              <small><label>First Name<span style="color: red;"> *</span></label></small>
+              <small><label>Nama Depan<span style="color: red;"> *</span></label></small>
               <input type="text" class="form-control" name="firstname" id="firsname" value="<?php echo $first;?>">
             </div>
             <div class="col">
-              <small><label>Last Name<span style="color: red;"> *</span></label></small>
+              <small><label>Nama Belakang<span style="color: red;"> *</span></label></small>
               <input type="text" class="form-control" name="lastname" value="<?php echo $last;?>">
             </div>
           </div>
 
           <div class="row" style="padding-top: 1em;">
             <div class="col">
-              <small><label>Display Name<span style="color: red;"> *</span></label></small>
+              <small><label>Username<span style="color: red;"> *</span></label></small>
               <input type="text" class="form-control" name="displayname" value="<?php echo $uname;?>">
-              <small id="emailHelp" class="form-text text-muted" style="font-style: italic;">This will be how your name will be displayed in the account section and in reviews</small>
             </div>
           </div>
 
@@ -77,54 +89,50 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
           </div>
 
+          <div class="row" style="padding-top: 1em;">
+            <div class="col">
+              <small><label>Nomor Telepon<span style="color: red;"> *</span></label></small>
+              <input type="text" name="nomor_telpon" class="form-control" value="<?php echo $this->session->userdata('nomor_telpon');?>" >
+            </div>
+          </div>
+
           <div class="row" style="padding-top: 2em;">
             <div class="col">
-              <h3 style="font-weight: 700;">Password change</h3>
+              <h3 style="font-weight: 700;">Ubah Kata Sandi</h3>
             </div>
           </div>
 
            <div class="row" style="padding-top: 1em;">
             <div class="col">
-              <small><label>Current password (leave blank to leave unchanged)</label></small>
+              <small><label>Kata Sandi Sekarang (Kosongi jika tidak ada perubahan)</label></small>
               <input type="password" name="curpass" class="form-control" >
             </div>
           </div>
 
           <div class="row" style="padding-top: 1em;">
             <div class="col">
-              <small><label>New password (leave blank to leave unchanged)</label></small>
+              <small><label>Kata Sandi Baru (Kosongi jika tidak ada perubahan)</label></small>
               <input type="password" name="newpass" class="form-control" >
             </div>
           </div>
 
           <div class="row" style="padding-top: 1em;">
             <div class="col">
-              <small><label>Confirm New password</label></small>
+              <small><label>Konfirmasi Kata Sandi Baru</label></small>
               <input type="password" name="confirmnewpass" class="form-control" >
             </div>
           </div>
 
           <div class="row" style="padding-top: 1em;">
             <div class="col">
-              <input type="submit" class="btn btn-outline-dark" style="font-weight: 800 !important; border-radius: 3px !important;" name="btnsave" value="SAVE CHANGE">
+              <input type="submit" class="btn btn-outline-dark" style="font-weight: 800 !important; border-radius: 3px !important;" name="btnsave" value="SIMPAN PERUBAHAN">
             </div>
           </div>
+          <div class="row" align="right"><a href="<?php echo site_url().'Home/deleteakun'?>"><p style="color: red;">Hapus Akun</p></a></div>
         </form>
         <?php } ?>
       </div>
-      <div class="col-9 data" style="padding-left: 3em;">
-          <?php $str=explode('@',$this->session->userdata('email'))?>
-        <div class="row">
-          <p>Hello <?php echo $str[0];?>(not <?php echo $str[0];?> ? <a href="<?php echo site_url()."Home/logout"?>">Log out</a>)
-          </p>
-        </div>
-        <div class="row">
-          <p></p>
-
-        </div>
-        <div class="row"></div>
-        <div class="row" align="right"><a href="<?php echo site_url().'Home/deleteakun'?>"><p style="color: red;">Delete Account</p></a></div>
-      </div>
+      
       
     </div>
   </div>
