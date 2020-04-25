@@ -53,17 +53,6 @@
               margin-top: 15px;
             }
 
-            .service-content {
-              padding-left: 15px;
-              padding-right: 15px;
-              padding-top: 15vh;
-              background-image: url(../img/Semeru.jpg);
-              background-attachment: fixed;
-              min-height: 100vh;
-              background-size: cover;
-              background-position: center center;
-            }
-
             .service-content .left-text h4 {
               font-size: 24px;
               font-weight: 500;
@@ -85,14 +74,14 @@
                 <span><em>Dental</em> Care</span>
               </div>
               <div class="col">
-                <div class="row bg-light" style="opacity:80%; margin-bottom:1em; padding-top:2vh; padding-bottom:2vh;">
-                  <a class="offset-md-1"><b>Konsultasi</b></a>
+                <div class="row bg-dark" style="opacity:80%; margin-bottom:1em; padding-top:3vh; padding-bottom:3vh;">
+                  <a class="offset-md-1" style="color: white; font-size:medium;"><b>Konsultasi</b></a>
                 </div>
-                <div class="row bg-light" style="opacity:80%; margin-bottom:1em; padding-top:2vh; padding-bottom:2vh;">
-                  <a class="offset-md-1"><b>Temukan Dokter</b></a>
+                <div class="row bg-dark" style="opacity:80%; margin-bottom:1em; padding-top:3vh; padding-bottom:3vh;">
+                  <a class="offset-md-1" style="color: white; font-size:medium;"><b>Temukan Dokter</b></a>
                 </div>
-                <div class="row bg-light" style="opacity:80%; margin-bottom:1em; padding-top:2vh; padding-bottom:2vh;">
-                  <a class="offset-md-1"><b>Buat Janji<b></a>
+                <div class="row bg-dark" style="opacity:80%; margin-bottom:1em; padding-top:3vh; padding-bottom:3vh;">
+                  <a class="offset-md-1" style="color: white; font-size:medium;"><b>Buat Janji<b></a>
                 </div>
               </div>
             </div>
@@ -100,7 +89,7 @@
     </div>
 
 
-    <div class="service-content" id="services">
+   <!-- <div class="service-content" id="services">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -144,7 +133,7 @@
                 </div>                
             </div>
         </div>
-    </div>
+    </div> -->
 
     
    <!-- <div class="overlay"></div>
@@ -188,7 +177,7 @@
 </div> -->
 
 
-    <div class="tabs-content" id="our-story">
+   <!--  <div class="tabs-content" id="our-story">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
@@ -235,7 +224,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
 
 

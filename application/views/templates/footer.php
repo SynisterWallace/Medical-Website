@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small " style="background-color: #00CED9;"  >
+<footer class="page-footer font-small " style="background-color: #00CED9; padding-top:4vh;"  >
 
       <div class="container" >
 
@@ -19,7 +19,7 @@
           <form class="input-group">
             <input type="text" class="form-control form-control-sm bg-light" placeholder="Your email address" aria-label="Your email" aria-describedby="basic-addon2">
             <div class="input-group-append">
-              <button class="btn btn-sm btn-danger my-0" style="width: 95%;" type="button">Subscribe</button>
+              <button class="btn btn-sm btn-danger my-0" style="width: 100%;" type="button">Subscribe</button>
             </div>
           </form>
           <div class="col-md-15 py-5">
@@ -47,18 +47,18 @@
 
         <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mb-4">
 
-          <h6 class="text-uppercase font-weight-bold" style="color: white;">Blog</h6>
+          <h4 class="text-uppercase font-weight-bold" style="color: white;">Blog</h4>
           <p>
-            <a href="#!" style="color: grey; font-size: small;">Informasi Pendaki</a>
+            <a href="#!" style="color: white; font-size: 12px;">Informasi Kesehatan</a>
           </p>
           <p>
-            <a href="#!" style="color: grey; font-size: small;">Arei meluncurkan produk baru untuk pendakian di tempat ekstrim</a>
+            <a href="#!" style="color: white; font-size: 12px;">Berita Terbaru</a>
           </p>
           <p>
-            <a href="#!" style="color: grey; font-size: small;">Keindahan Kawah ijen di malam tahun baru</a>
+            <a href="#!" style="color: white; font-size: 12px;">Tips Kesehatan</a>
           </p>
           <p>
-            <a href="#!" style="color: grey; font-size: small;">Pendataan pendaki 2019 oleh pemerintah lokal</a>
+            <a href="#!" style="color: white; font-size: 12px;">DIY Check-ups</a>
           </p>
           
 
@@ -66,31 +66,28 @@
 
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-2">
 
-          <h6 class="text-uppercase font-weight-bold" style="color: white;">Tentang Kami</h6>
+          <h4 class="text-uppercase font-weight-bold" style="color: white;">Tentang Kami</h4>
           <p>
-            <a href="<?php echo base_url().'Home/viewsejarah' ?>" style="color: grey; font-size: small;">Sejarah</a>
+            <a href="<?php echo base_url().'Home/viewsejarah' ?>" style="color: white; font-size: 12px;">Sejarah</a>
           </p>
           <p>
-            <a href="#!" style="color: grey; font-size: small;">Teams</a>
+            <a href="#!" style="color: white; font-size: 12px;">Teams</a>
           </p>
           <p>
-            <a href="#!" style="color: grey; font-size: small;">Berita & Pengumuman</a>
-          </p>
-          <p>
-            <a href="#!" style="color: grey; font-size: small;">Ulasan</a>
+            <a href="#!" style="color: white; font-size: 12px;">Berita & Pengumuman</a>
           </p>
         </div>
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" >
 
-          <h6 class="text-uppercase font-weight-bold" style="color: white;">Informasi Kontak</h6>
+          <h4 class="text-uppercase font-weight-bold" style="color: white;">Informasi Kontak</h4>
           <p>
-            <a href="#!" style="color: grey; font-size: small;">Jalan Legimo 18, Tunjungrejo, Lumajang, Jawa Timur</a>
+            <a href="#!" style="color: white; font-size: 12px;">Jalan Legimo 18, Tunjungrejo, Lumajang, Jawa Timur</a>
           </p>
           <p>
-            <a href="#!" style="color: grey; font-size: small;">081236162626</a>
+            <a href="#!" style="color: white; font-size: 12px;">081236162626</a>
           </p>
           <p>
-            <a href="#!" style="color: grey; font-size: small;">hectorclarkson@gmail.com</a>
+            <a href="#!" style="color: white; font-size: 12px;">hectorclarkson@gmail.com</a>
           </p>
         </div>
 
@@ -98,11 +95,6 @@
 
     </div>
 
-    <div class="footer-copyright text-center py-1">
-      <div class="row">
-      <div class="col-12">
-        <p style="font-size: 10px;"> Active Session: <?= $this->session->userdata('username_or_email'); ?>
-      </div>
   </footer>
 
 
