@@ -1,5 +1,4 @@
 <div class="container-fluid">
-
 <div class="row" style="background-color: #00CED9 ; padding-left: 5vh; padding-right: 20vh; color: white;">
   <small><a href="#" style="text-decoration: none; color: white;">HOME</a>/REGISTER</small>
 </div>

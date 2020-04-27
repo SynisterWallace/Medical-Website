@@ -30,16 +30,13 @@ class Home extends CI_Controller{
 		$this->load->view('templates/footer');	
 	}
 
-<<<<<<< HEAD
 	public function dashboard_admin(){
-		$data['pelanggan'] = $this->m_admin->tampil_data_pelanggan()->result();
+		$data['pelanggan'] = $this->tampil_data_pelanggan()->result();
 		$data['pembayaran'] = $this->m_admin->tampil_data_pembayaran()->result();
 		$data['service'] = $this->m_admin->tampil_data_service()->result();
         $this->load->view('dashboard_admin',$data);	
 	}
 
-=======
->>>>>>> 57376f34ca8633d86477a66585d42ffc8e28a258
 	public function viewRegister(){
 		$data['title'] = 'Registrasi';
 		$this->load->view('templates/header', $data);
@@ -62,6 +59,8 @@ class Home extends CI_Controller{
 		$this->load->view('home/profile');
 		$this->load->view('templates/footer');
 	}
+
+	#CRUD LOGIN REGIS
 
 	public function updateprofile(){
 		$this->load->model('User_model');
@@ -196,7 +195,6 @@ class Home extends CI_Controller{
 		$this->session->sess_destroy();
 		redirect(base_url().'/Home/viewlogin');
 	}
-<<<<<<< HEAD
 
 	public function view_pelanggan(){
         $data['pelanggan'] = $this->admin_model->tampil_data_pelanggan()->result();
@@ -208,6 +206,8 @@ class Home extends CI_Controller{
         $this->load->view('/home/dashboard_admin',$data);
 	}
 
+	#CRUD SERVICE ADMIN
+	
 	public function aksi_add_service(){
 		$id_service = $this->input->post('id_service');
 		$nama_service = $this->input->post('nama_service');
@@ -265,10 +265,6 @@ class Home extends CI_Controller{
 		$this->admin_model->update_data($where,$data,'service');
 		redirect('home/dashboard_admin');
 	}
-=======
-	
-
->>>>>>> 57376f34ca8633d86477a66585d42ffc8e28a258
 }
 
 ?>

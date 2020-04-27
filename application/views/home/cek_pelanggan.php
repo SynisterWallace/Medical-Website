@@ -290,6 +290,8 @@
 		</script>
 	</head>
 	<body>
+
+	<!--TABLE -->
 		<?php include('../templates/header.php')?>
 		<div class="container">
 			<div class="table-wrapper">
