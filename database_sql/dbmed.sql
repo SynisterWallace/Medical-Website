@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2020 at 01:27 PM
+-- Generation Time: Apr 29, 2020 at 04:10 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -50,10 +50,9 @@ INSERT INTO `admin` (`id`, `email`, `username`, `password`, `nama`) VALUES
 --
 
 CREATE TABLE `user` (
-  `id_user` int(11) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `nama` varchar(20) NOT NULL,
-  `alamat` varchar(20) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `nomor_telpon` varchar(12) NOT NULL
@@ -63,8 +62,8 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `email`, `nama`, `alamat`, `username`, `password`, `nomor_telpon`) VALUES
-(0, 'cindy@gmail.com', '', '', '', 'hahaha', '0000');
+INSERT INTO `user` (`email`, `firstname`, `lastname`, `username`, `password`, `nomor_telpon`) VALUES
+('cindy@gmail.com', 'cindy@gmail.com', '', '', 'lalala', '0000');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -31,9 +31,9 @@ class Home extends CI_Controller{
 	}
 
 	public function dashboard_admin(){
-		$data['pelanggan'] = $this->tampil_data_pelanggan()->result();
-		$data['pembayaran'] = $this->m_admin->tampil_data_pembayaran()->result();
-		$data['service'] = $this->m_admin->tampil_data_service()->result();
+		$data['pelanggan'] = $this->Admin_model->tampil_data_pelanggan()->result();
+		$data['pembayaran'] = $this->Admin_model->tampil_data_pembayaran()->result();
+		$data['service'] = $this->Admin_model->tampil_data_service()->result();
         $this->load->view('dashboard_admin',$data);	
 	}
 
@@ -65,6 +65,7 @@ class Home extends CI_Controller{
 	public function updateprofile(){
 		$this->load->model('User_model');
 		$data=$this->User_model->getuser($this->session->userdata('username_or_email'));
+		$pass = array();
 		foreach ($data as $key) {
 			$pass=$key->password;
 		}
@@ -76,22 +77,21 @@ class Home extends CI_Controller{
 			'password'=>$pass,
 			'no_telpon'=>$this->input->post('no_telpon')
 		);
+		
 		if($this->input->post('curpass')!='' ){
-			if($this->input->post('curpass')==$pass){
 				if($this->input->post('newpass')!='' && $this->input->post('newpass')==$this->input->post('confirmnewpass')){
 					$content['password']=$this->input->post('newpass');
 					$this->User_model->update($content);
 					echo "<script type='text/javascript'> alert('Success update profile') </script>";
-					$this->viewprofile_detail();
+					$this->viewprofile();
 				}else echo "<script type='text/javascript'> alert('password baru tidak valid') </script>";
-
-			}else echo "<script type='text/javascript'> alert('password salah') </script>";
 
 		}else{
 			$this->User_model->update($content);
 			echo "<script type='text/javascript'> alert('Success update profile') </script>";
-			$this->viewprofile_detail();
+			$this->viewprofile();
 		}
+	
 	}
 	public function login(){
 
@@ -114,11 +114,10 @@ class Home extends CI_Controller{
 
 			//$this->session->set_userdata('username_or_email', $this->input->post('username_or_email'));
 			$datauser = array (
-				'id_user' => $data->id_user,
 				'email' => $data->email,
 				'username' => $data->username,
-				'nama' => $data->nama,
-				'alamat' => $data->alamat,
+				'firstname' => $data->firstname,
+				'lastname' => $data->lastname,
 				'nomor_telpon' => $data->nomor_telpon
 			);
 
@@ -158,7 +157,7 @@ class Home extends CI_Controller{
 			);
 
 			$this->session->set_userdata($dataadmin);
-			$this->viewMember();
+			$this->dashboard_admin();
 		}else{
 			$this->viewlogin();
 		}
@@ -197,12 +196,12 @@ class Home extends CI_Controller{
 	}
 
 	public function view_pelanggan(){
-        $data['pelanggan'] = $this->admin_model->tampil_data_pelanggan()->result();
+        $data['pelanggan'] = $this->Admin_model->tampil_data_pelanggan()->result();
         $this->load->view('/home/dasboard_admin',$data);
 	}
 	
 	public function view_pembayaran(){
-        $data['pembayaran'] = $this->admin_model->tampil_data_pembayaran()->result();
+        $data['pembayaran'] = $this->Admin_model->tampil_data_pembayaran()->result();
         $this->load->view('/home/dashboard_admin',$data);
 	}
 

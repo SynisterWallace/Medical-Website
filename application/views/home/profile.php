@@ -54,9 +54,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php foreach ($user as $key) { 
           if($key->email!=null) $first=$key->email;
           else $first='';
-          if($key->nama!=null) $last=$key->nama;
+          if($key->firstname!=null) $last=$key->firstname;
           else $last='';
-          if($key->alamat!=null) $uname=$key->alamat;
+          if($key->lastname!=null) $uname=$key->lastname;
           else$uname="";
           ?>
    
