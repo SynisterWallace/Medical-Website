@@ -54,10 +54,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php foreach ($user as $key) { 
           if($key->email!=null) $first=$key->email;
           else $first='';
-          if($key->firstname!=null) $last=$key->firstname;
+          if($key->nama!=null) $last=$key->nama;
           else $last='';
-          if($key->lastname!=null) $uname=$key->lastname;
-          else$uname="";
+          if($key->alamat!=null) $uname=$key->alamat;
+          else$alamat="";
           ?>
    
         <?php $str=explode('@',$this->session->userdata('_email'));
@@ -78,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="row" style="padding-top: 1em;">
             <div class="col">
               <small><label>Username<span style="color: red;"> *</span></label></small>
-              <input type="text" class="form-control" name="displayname" value="<?php echo $uname;?>">
+              <input type="text" class="form-control" name="displayname" value="<?php echo $first;?>">
             </div>
           </div>
 

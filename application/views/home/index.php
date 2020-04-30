@@ -37,7 +37,7 @@
             <a href="" style="color: white; text-decoration: none;" onmouseover="this.style.color='red'"onmouseout="this.style.color='white'">Dokter</a>
           </div>
           <div class="col-md-2" style="background-color:#00CED9; border-radius:15px; margin-left:0.25vh">
-            <a href="<?php echo base_url().'Home/adminlogin';?>" style="color: white; text-decoration: none;" onmouseover="this.style.color='red'"onmouseout="this.style.color='white'">Admin</a>
+            <a href="<?php echo base_url().'Home/loginAdmin';?>" style="color: white; text-decoration: none;" onmouseover="this.style.color='red'"onmouseout="this.style.color='white'">Admin</a>
           </div>
           </div>
 

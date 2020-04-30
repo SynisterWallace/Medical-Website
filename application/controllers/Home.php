@@ -115,10 +115,12 @@ class Home extends CI_Controller{
 			//$this->session->set_userdata('username_or_email', $this->input->post('username_or_email'));
 			$datauser = array (
 				'email' => $data->email,
+				'nama' => $data->nama,
+				'alamat' => $data->alamat,
 				'username' => $data->username,
-				'firstname' => $data->firstname,
-				'lastname' => $data->lastname,
-				'nomor_telpon' => $data->nomor_telpon
+				'password' => $data->password,
+				'nomor_telpon' => $data->nomor_telpon,
+				'level' => $data->level
 			);
 
 			$this->session->set_userdata($datauser);
