@@ -389,6 +389,7 @@
 						<div class="modal-body">					
 							<div class="form-group">
 								<label>Service</label>
+								<input type="hidden" name="id_service" value="<?php echo $u->id_service ?>">
 								<input type="text" name="nama_service" class="form-control" value="<?php echo $u->nama_service ?>" required>
 							</div>
 							<div class="form-group">
@@ -423,7 +424,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<form action="<?php echo base_url('home/hapus_service');?>" method="post">
-						<input type="hidden" name="id_user" value="<?php echo $u->id_service ?>">
+						<input type="hidden" name="id_service" value="<?php echo $u->id_service ?>">
 						<div class="modal-header">
 							<h4 class="modal-title">Delete Service</h4>
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

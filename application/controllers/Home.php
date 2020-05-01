@@ -6,6 +6,7 @@ class Home extends CI_Controller{
 		parent::__construct();
 		$this->load->model('User_model');
 		$this->load->model('Admin_model');
+		$this->load->helper('url');
 	}
 
 	public function index(){
@@ -257,17 +258,6 @@ class Home extends CI_Controller{
 		redirect('home/viewAdmin');
 	}
 
-	public function hapus_service(){
-		$id_service=$this->input->post('id_service');
-		$this->Admin_model->hapus_service($id_service);
-		redirect('home/viewAdmin');
-	}
-
-	public function delete_all_service(){
-		$this->Admin_model->delete_all_service();
-		redirect('home/viewAdmin');
-	}
-
 	public function update_service(){
 		//Feature prediction
 		$id_service = $this->input->post('id_service');
@@ -276,22 +266,34 @@ class Home extends CI_Controller{
 		$nama_pasien = $this->input->post('nama_pasien');
 		$ruangan = $this->input->post('ruangan');
 		$jam_operasional = $this->input->post('jam_operasional');
-
+		
 		$data = array(
 			'id_service' => $id_service,
 			'nama_service' => $nama_service,
 			'nama_dokter' => $nama_dokter,
 			'nama_pasien' => $nama_pasien,
 			'ruangan' => $ruangan,
-			'jam_operasional' => $jam_operasional
+			'jam_operasional' => $jam_operasional,
 		);
-	
 		$where = array(
 			'id_service' => $id_service
 		);
 		$this->Admin_model->update_data($where,$data,'service');
 		redirect('home/viewAdmin');
 	}
+
+	public function hapus_service(){
+		$id_service=$this->input->post('id_service');
+		$this->Admin_model->hapus_service($id_service);
+		redirect('home/viewAdmin');	
+	}
+
+	public function delete_all_service(){
+		$this->Admin_model->delete_all_service();
+		redirect('home/viewAdmin');
+	}
+
+	
 }
 
 ?>
