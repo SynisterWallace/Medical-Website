@@ -49,9 +49,14 @@ class Admin_model extends CI_model{
 		$this->db->insert($table,$data);
 	}
 
+	function hapus_service($id_service){
+		$result=$this->db->query("DELETE FROM service WHERE id_service='$id_service'");
+		return $result;
+	}
+
 	public function delete_all_service(){
 		$result=$this->db->query("DELETE FROM 'service'");
-        return $result;
+        	return $result;
 	}
 	
 }

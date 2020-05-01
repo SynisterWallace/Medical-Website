@@ -381,7 +381,7 @@
 		<div id="editEmployeeModal<?php echo $u->id_service;?>" class="modal fade" tabindex="-1">
 			<div class="modal-dialog">
 			<div class="modal-content">
-					<form action="<?php echo base_url('admin/update_service'); ?>" method="post">
+					<form action="<?php echo base_url('Home/update_service'); ?>" method="post">
 						<div class="modal-header">						
 							<h4 class="modal-title">Edit Service</h4>
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
