@@ -13,15 +13,19 @@ class Admin_model extends CI_model{
 
 	public function validate($username_or_email, $password){
 		$valid = FALSE;
-
 		foreach ($this->getAll() as $admin) {
 			if((strcmp($admin['username'], $username_or_email) == 0 || strcmp($admin['email'], $username_or_email) == 0) && strcmp($admin['password'], $password) == 0){
 				$valid = TRUE;
 				break;
 			}
 		}
-
 		return $valid;
+	}
+
+	public function validate_admin($username_or_email,$password){
+        	$this->db->where('email',$username_or_email);
+        	$this->db->where('password',$password);
+        	return $this->db->get('admin');
 	}
 
 	public function tampil_data_pelanggan(){

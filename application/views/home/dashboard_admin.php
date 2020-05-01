@@ -290,7 +290,6 @@
 		</script>
 	</head>
 	<body>
-		<?php include('../templates/header.php')?>
 		<div class="container">
 			<div class="table-wrapper">
 				<div class="table-title">
@@ -312,7 +311,8 @@
 							<th style="width: 22%;">Dokter</th>
 							<th>Pasien</th>
 							<th>Ruangan</th>
-							<th>Jam Operasional.</th> 
+							<th>Jam Operasional</th> 
+							<th>Action</th> 
 						</tr>
 					</thead>
 					<?php
@@ -418,7 +418,7 @@
 		</div>
 		<?php }?>
 		<!-- Delete Modal HTML by id-->
-		<?php foreach($user as $u){?>
+		<?php foreach($service as $u){?>
 		<div id="deleteEmployeeModal<?php echo $u->id_service;?>" class="modal fade" tabindex="-1">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -462,6 +462,5 @@
 				</div>
 			</div>
 		</div>
-		<?php include('../templates/footer.php')?>
 	</body>
 </html>                                		                            

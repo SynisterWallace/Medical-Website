@@ -9,8 +9,7 @@
       </div>
       <div class="col-md-4 py-3  border border-white rounded" style="margin-top: 9em; margin-bottom:9.5em; background-color:#FFFFFF;" >
       <h5 style="font-weight: bolder; color: black; padding-left: 5em;"><strong>Masuk Sebagai Administrator</strong></h5></br>
-        <?= form_open(base_url('Home/administratorlogin')); ?>
-        <form method="post">
+        <form method="post" action="<?php echo base_url('Home/loginAdmin'); ?>">
           <div class="form-group">
             
             <input type="text" class="form-control" id="username_or_email" name="username_or_email" placeholder="Username">
@@ -27,7 +26,6 @@
               <button type="submit" name="login" class="btn btn-outline-dark" style="font-weight: bold; font-size: 11px; ">Masuk</button>              
             </div>
           </div>
-
         </form>
       </div>
     </div>

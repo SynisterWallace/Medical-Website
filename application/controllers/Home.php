@@ -6,7 +6,6 @@ class Home extends CI_Controller{
 		parent::__construct();
 		$this->load->model('User_model');
 		$this->load->model('Admin_model');
-	
 	}
 
 	public function index(){
@@ -30,11 +29,11 @@ class Home extends CI_Controller{
 		$this->load->view('templates/footer');	
 	}
 
-	public function dashboard_admin(){
+	public function viewAdmin(){
 		$data['pelanggan'] = $this->Admin_model->tampil_data_pelanggan()->result();
 		$data['pembayaran'] = $this->Admin_model->tampil_data_pembayaran()->result();
 		$data['service'] = $this->Admin_model->tampil_data_service()->result();
-        $this->load->view('dashboard_admin',$data);	
+        $this->load->view('home/dashboard_admin',$data);	
 	}
 
 	public function viewRegister(){
@@ -106,7 +105,6 @@ class Home extends CI_Controller{
 		$this->db->or_where(array('email' => $unoe));
 		$cek = $this->db->get();
 
-
 		if($this->form_validation->run() == FALSE){
 			redirect(base_url('Home/viewlogin'));
 		}else if($this->User_model->validate($this->input->post('username_or_email'), $this->input->post('password')) == TRUE){
@@ -122,11 +120,40 @@ class Home extends CI_Controller{
 				'nomor_telpon' => $data->nomor_telpon,
 				'level' => $data->level
 			);
-
 			$this->session->set_userdata($datauser);
 			$this->viewMember();
 		}else{
 			$this->viewlogin();
+		}
+		
+	}
+
+	public function loginAdmin(){
+		$this->form_validation->set_rules('username_or_email', 'username_or_email', 'required');
+		$this->form_validation->set_rules('password', 'password', 'required');
+		
+		$unoe = $this->input->post('username_or_email');
+		$pass = $this->input->post('password');
+		
+		$this->db->from('admin');
+		$this->db->where(array('email' => $unoe));
+		$cek = $this->db->get();
+
+		if($this->form_validation->run() == FALSE){
+			redirect(base_url('Home/adminlogin'));
+		}else if($this->Admin_model->validate_admin($unoe, $pass)){
+			$data = $cek->row();
+			//$this->session->set_userdata('username_or_email', $this->input->post('username_or_email'));
+			$datauser = array (
+				'email' => $data->email,
+				'username' => $data->username,
+				'password' => $data->password,
+				'nama' => $data->nama
+			);
+			$this->session->set_userdata($datauser);
+			$this->viewAdmin();
+		}else{
+			$this->adminlogin();
 		}
 		
 	}
