@@ -54,6 +54,17 @@ class Admin_model extends CI_model{
 		return $result;
 	}
 
+	function hapus_pembayaran($id_pembayaran){
+		$result=$this->db->query("DELETE FROM pembayaran WHERE id_transaksi='$id_pembayaran'");
+		return $result;
+	}
+
+	function hapus_pelanggan($id_pasien){
+		$result=$this->db->query("DELETE FROM pelanggan WHERE id_pasien='$id_pasien'");
+		return $result;
+	}
+
+
 	public function delete_all_service(){
 		$result=$this->db->query("DELETE FROM 'service'");
         	return $result;

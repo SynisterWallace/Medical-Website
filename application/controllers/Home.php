@@ -31,10 +31,22 @@ class Home extends CI_Controller{
 	}
 
 	public function viewAdmin(){
-		$data['pelanggan'] = $this->Admin_model->tampil_data_pelanggan()->result();
-		$data['pembayaran'] = $this->Admin_model->tampil_data_pembayaran()->result();
 		$data['service'] = $this->Admin_model->tampil_data_service()->result();
-        $this->load->view('home/dashboard_admin',$data);	
+		$this->load->view('templates/header_admin');
+		$this->load->view('home/dashboard_admin',$data);	
+		$this->load->view('templates/footer_admin');
+	}
+
+	public function viewAdminPembayaran(){
+		$data['pembayaran'] = $this->Admin_model->tampil_data_pembayaran()->result();
+		$this->load->view('home/cek_pembayaran',$data);	
+		$this->load->view('templates/footer_admin');
+	}
+
+	public function viewAdminCustomer(){
+		$data['pelanggan'] = $this->Admin_model->tampil_data_pelanggan()->result();
+		$this->load->view('home/cek_pelanggan',$data);	
+		$this->load->view('templates/footer_admin');
 	}
 
 	public function viewRegister(){
@@ -258,6 +270,42 @@ class Home extends CI_Controller{
 		redirect('home/viewAdmin');
 	}
 
+	public function aksi_add_pembayaran(){
+		$id_transaksi = $this->input->post('id_transaksi');
+		$no_transaksi = $this->input->post('no_transaksi');
+		$nama_pasien = $this->input->post('nama_pasien');
+		$waktu = $this->input->post('waktu');
+		$keterangan = $this->input->post('keterangan');
+
+		$data = array(
+			'id_transaksi' => $id_transaksi,
+			'no_transaksi' => $no_transaksi,
+			'nama_pasien' => $nama_pasien,
+			'waktu' => $waktu,
+			'keterangan' => $keterangan
+			);
+
+		$this->Admin_model->input_data($data,'pembayaran');
+		redirect('home/viewAdminPembayaran');
+	}
+
+	public function aksi_add_pelanggan(){
+		$id_pasien = $this->input->post('id_pasien');
+		$nama_pasien = $this->input->post('nama_pasien');
+		$alamat = $this->input->post('alamat');
+		$umur = $this->input->post('umur');
+
+		$data = array(
+			'id_pasien' => $id_pasien,
+			'nama_pasien' => $nama_pasien,
+			'alamat' => $alamat,
+			'umur' => $umur
+			);
+
+		$this->Admin_model->input_data($data,'pelanggan');
+		redirect('home/viewAdminCustomer');
+	}
+
 	public function update_service(){
 		//Feature prediction
 		$id_service = $this->input->post('id_service');
@@ -282,10 +330,66 @@ class Home extends CI_Controller{
 		redirect('home/viewAdmin');
 	}
 
+	public function update_pembayaran(){
+		//Feature prediction
+		$id_transaksi = $this->input->post('id_transaksi');
+		$no_transaksi = $this->input->post('no_transaksi');
+		$nama_pasien = $this->input->post('nama_pasien');
+		$waktu = $this->input->post('waktu');
+		$keterangan = $this->input->post('keterangan');
+		
+		$data = array(
+			'id_transaksi' => $id_transaksi,
+			'no_transaksi' => $no_transaksi,
+			'nama_pasien' => $nama_pasien,
+			'waktu' => $waktu,
+			'keterangan' => $keterangan
+		);
+		$where = array(
+			'id_transaksi' => $id_transaksi
+		);
+		$this->Admin_model->update_data($where,$data,'pembayaran');
+		redirect('home/viewAdminPembayaran');
+	}
+
+	public function update_pelanggan(){
+		//Feature prediction
+
+		
+		$id_pasien = $this->input->post('id_pasien');
+		$nama_pasien = $this->input->post('nama_pasien');
+		$alamat = $this->input->post('alamat');
+		$umur = $this->input->post('umur');
+		
+		$data = array(
+			'id_pasien' => $id_pasien,
+			'nama_pasien' => $nama_pasien,
+			'alamat' => $alamat,
+			'umur' => $umur
+		);
+		$where = array(
+			'id_pasien' => $id_pasien
+		);
+		$this->Admin_model->update_data($where,$data,'pelanggan');
+		redirect('home/viewAdminCustomer');
+	}
+
 	public function hapus_service(){
 		$id_service=$this->input->post('id_service');
 		$this->Admin_model->hapus_service($id_service);
 		redirect('home/viewAdmin');	
+	}
+
+	public function hapus_pembayaran(){
+		$id_transaksi=$this->input->post('id_transaksi');
+		$this->Admin_model->hapus_pembayaran($id_transaksi);
+		redirect('home/viewAdminPembayaran');	
+	}
+
+	public function hapus_pelanggan(){
+		$id_pasien=$this->input->post('id_pasien');
+		$this->Admin_model->hapus_pelanggan($id_pasien);
+		redirect('home/viewAdminCustomer');	
 	}
 
 	public function delete_all_service(){
