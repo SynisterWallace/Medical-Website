@@ -1,6 +1,6 @@
 <?php
 
-class Admin_model extends CI_model{
+class Dokter_model extends CI_model{
 
 	public function getAll(){
 		return $this->db->get('dokter')->result_array();
@@ -28,13 +28,9 @@ class Admin_model extends CI_model{
         	return $this->db->get('admin');
 	}
 
-	public function tampil_data_pelanggan(){
-        return $this->db->get('pelanggan');
+	public function tampil_data_dokter(){
+        return $this->db->get('dokter');
 	}
-
-	
-
-	
 
 	public function update_data($where,$data,$table){
 		$this->db->where($where);
@@ -50,8 +46,6 @@ class Admin_model extends CI_model{
 		$result=$this->db->query("DELETE FROM pelanggan WHERE id_pasien='$id_pasien'");
 		return $result;
 	}
-
-	
 }
 
 ?>

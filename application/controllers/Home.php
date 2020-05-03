@@ -6,6 +6,7 @@ class Home extends CI_Controller{
 		parent::__construct();
 		$this->load->model('User_model');
 		$this->load->model('Admin_model');
+		$this->load->model('Dokter_model');
 		$this->load->helper('url');
 	}
 
@@ -56,10 +57,26 @@ class Home extends CI_Controller{
 		$this->load->view('templates/footer_admin');
 	}
 
+	public function viewService(){
+		$data['service'] = $this->Admin_model->tampil_data_service()->result();
+		$data['title'] = 'Servuce';
+		$this->load->view('templates/header', $data);
+		$this->load->view('home/service');
+		$this->load->view('templates/footer');	
+	}
+
 	public function viewRegister(){
 		$data['title'] = 'Registrasi';
 		$this->load->view('templates/header', $data);
 		$this->load->view('home/register');
+		$this->load->view('templates/footer');	
+	}
+
+	public function viewPembayaran(){
+		$data['pembayaran'] = $this->Admin_model->tampil_data_pembayaran()->result();
+		$data['title'] = 'Pembayaran';
+		$this->load->view('templates/header', $data);
+		$this->load->view('home/pembayaran');
 		$this->load->view('templates/footer');	
 	}
 
@@ -69,6 +86,16 @@ class Home extends CI_Controller{
 		$this->load->view('home/memberview');
 		$this->load->view('templates/footer');
 	}
+
+	public function viewDokter(){
+		$data['pembayaran'] = $this->Admin_model->tampil_data_pembayaran()->result();
+		$data['dokter'] = $this->Dokter_model->tampil_data_dokter()->result();
+		$data['title'] = 'View Dokter';
+		$this->load->view('templates/headerMember', $data);
+		$this->load->view('home/doctorview');
+		$this->load->view('templates/footer');
+	}
+
 	public function viewprofile(){
 
 		$this->load->model('User_model');
