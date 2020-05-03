@@ -291,11 +291,14 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="table-wrapper">
+            <div class="table-wrapper">
 				<div class="table-title">
 					<div class="row">
 						<div class="col-sm-6">
-							<h2>View <b>Dokter</b></h2>
+							<h2><b>Payment</b></h2>
+						</div>
+						<div class="col-sm-6">
+							<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Service</span></a>
 						</div>
 					</div>
 				</div>
@@ -303,24 +306,63 @@
 				<thead>
 						<tr>
 							<th>No</th>
-							<th>Dokter</th>
-							<th style="width: 22%;">Spesialis</th>
+							<th>Nomor Transaksi</th>
+							<th style="width: 22%;">Nama Pasien</th>
+							<th>Waktu</th>
+							<th>Keterangan</th>
 						</tr>
 					</thead>
 					<?php
 						$no = 1;
-						foreach($dokter as $u){
+						foreach($pembayaran as $u){
 					?>
 					<tbody>
 						<tr>
 							<td> <?php echo $no++ ?> </td>
-							<td> <?php echo $u->nama ?> </td>
-							<td> <?php echo $u->spesialis ?> </td>
+							<td> <?php echo $u->no_transaksi ?> </td>
+							<td> <?php echo $u->nama_pasien ?> </td>
+							<td> <?php echo $u->waktu ?> </td>
+							<td> <?php echo $u->keterangan ?> </td>
 						</tr>
 					</tbody>
 					<?php } ?>
 				</table>
-			</div>
-		</div>
+		    </div>
+            <!-- Add Modal HTML -->
+            <div id="addEmployeeModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form action="<?php echo base_url('home/aksi_add_pembayaran'); ?>" method="post">
+                            <div class="modal-header">						
+                                <h4 class="modal-title">Add Pembayaran</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">					
+                                <div class="form-group">
+                                    <label>Nomor Transaksi</label>
+                                    <input type="text" name="no_transaksi" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Pasien</label>
+                                    <input type="text" name="nama_pasien" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Waktu</label>
+                                    <input type="text" name="waktu" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Keterangan</label>
+                                    <input type="text" name="keterangan" class="form-control" required>
+                                </div>			
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                <input type="submit" class="btn btn-success" value="Add">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</body>
 </html>                                		                            
