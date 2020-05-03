@@ -75,13 +75,10 @@
               </div>
               <div class="col">
                 <div class="row bg-dark" style="opacity:80%; margin-bottom:1em; padding-top:3vh; padding-bottom:3vh;">
-                  <a class="offset-md-1" style="color: white; font-size:medium;"><b>Konsultasi</b></a>
+                  <a class="offset-md-1" style="color: white; font-size:medium;"><b>Pilih Layanan</b></a>
                 </div>
                 <div class="row bg-dark" style="opacity:80%; margin-bottom:1em; padding-top:3vh; padding-bottom:3vh;">
-                  <a class="offset-md-1" style="color: white; font-size:medium;"><b>Temukan Dokter</b></a>
-                </div>
-                <div class="row bg-dark" style="opacity:80%; margin-bottom:1em; padding-top:3vh; padding-bottom:3vh;">
-                  <a class="offset-md-1" style="color: white; font-size:medium;"><b>Buat Janji<b></a>
+                  <a class="offset-md-1" style="color: white; font-size:medium;"><b>Daftar Dokter</b></a>
                 </div>
               </div>
             </div>

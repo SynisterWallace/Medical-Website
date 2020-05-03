@@ -39,16 +39,10 @@
       <ul class="navbar-nav">
         <div class="row" id="itemku">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url().'Home/viewGunung';?>" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'"  href="#" style="color: white; ">Layanan</a>
+            <a class="nav-link" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'" href="" style="color: white; ">Hubungi Kami</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url().'Home/viewVendor';?>" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'" href="#" style="color: white; ">Testimoni</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'" href="<?php echo base_url().'Home/viewSejarah';?>" style="color: white; ">Hubungi Kami</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'" href="<?php echo base_url().'Home/viewcart';?>" style="color: white; ">Tentang Kami</a>
+            <a class="nav-link" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'" href="" style="color: white; ">Tentang Kami</a>
           </li>
           <li class="nav-item" style="background-color:#800000; border-radius:15px;">
             <a class="nav-link" <?php $str=explode('@',$this->session->userdata('email'))?>  href="<?php if($this->session->userdata('email')==''){echo base_url() . 'Home/viewlogin'; }else{echo base_url() . 'Home/viewprofile';}?>" onmouseover="this.style.color='gray'" onmouseout="this.style.color='white'" href="#" style= "color: white"><i class="fas fa-user"></i> <?php if($this->session->userdata('email')==''){echo "Akun"; }else{echo $str[0] ;}?> </a>

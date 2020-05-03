@@ -30,6 +30,13 @@ class Home extends CI_Controller{
 		$this->load->view('templates/footer');	
 	}
 
+	public function dokterlogin(){
+		$data['title'] = 'Dokter Login';
+		$this->load->view('templates/header', $data);
+		$this->load->view('home/dokterlogin');
+		$this->load->view('templates/footer');	
+	}
+
 	public function viewAdmin(){
 		$data['service'] = $this->Admin_model->tampil_data_service()->result();
 		$this->load->view('templates/header_admin');
@@ -126,12 +133,10 @@ class Home extends CI_Controller{
 			//$this->session->set_userdata('username_or_email', $this->input->post('username_or_email'));
 			$datauser = array (
 				'email' => $data->email,
-				'nama' => $data->nama,
-				'alamat' => $data->alamat,
+				'firstname' => $data->firstname,
+				'lastname' => $data->lastname,
 				'username' => $data->username,
 				'password' => $data->password,
-				'nomor_telpon' => $data->nomor_telpon,
-				'level' => $data->level
 			);
 			$this->session->set_userdata($datauser);
 			$this->viewMember();
@@ -157,51 +162,33 @@ class Home extends CI_Controller{
 		}else if($this->Admin_model->validate_admin($unoe, $pass)){
 			$data = $cek->row();
 			//$this->session->set_userdata('username_or_email', $this->input->post('username_or_email'));
-			$datauser = array (
-				'email' => $data->email,
-				'username' => $data->username,
-				'password' => $data->password,
-				'nama' => $data->nama
-			);
-			$this->session->set_userdata($datauser);
 			$this->viewAdmin();
 		}else{
 			$this->adminlogin();
 		}
 		
 	}
+	
 
-	public function administratorlogin(){
-
+	public function loginDokter(){
 		$this->form_validation->set_rules('username_or_email', 'username_or_email', 'required');
 		$this->form_validation->set_rules('password', 'password', 'required');
-
+		
 		$unoe = $this->input->post('username_or_email');
 		$pass = $this->input->post('password');
-
-		$this->db->from('admin');
-		$this->db->where(array('username' => $unoe));
-		$this->db->or_where(array('email' => $unoe));
+		
+		$this->db->from('dokter');
+		$this->db->where(array('email' => $unoe));
 		$cek = $this->db->get();
 
-
 		if($this->form_validation->run() == FALSE){
-			redirect(base_url('Home/adminlogin'));
-		}else if($this->Admin_model->validate($this->input->post('username_or_email'), $this->input->post('password')) == TRUE){
+			redirect(base_url('Home/dokterlogin'));
+		}else if($this->Admin_model->validate_admin($unoe, $pass)){
 			$data = $cek->row();
-
 			//$this->session->set_userdata('username_or_email', $this->input->post('username_or_email'));
-			$dataadmin = array (
-				'id' => $data->id,
-				'username' => $data->username,
-				'nama' => $data->nama
-
-			);
-
-			$this->session->set_userdata($dataadmin);
-			$this->dashboard_admin();
+			$this->viewAdmin();
 		}else{
-			$this->viewlogin();
+			$this->dokterlogin();
 		}
 		
 	}

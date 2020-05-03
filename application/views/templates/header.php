@@ -39,16 +39,10 @@
       <ul class="navbar-nav">
         <div class="row" id="itemku">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url().'Home/viewGunung';?>" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'"  href="#" style="color: white; ">Layanan</a>
+            <a class="nav-link" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'" href="" style="color: white; ">Hubungi Kami</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url().'Home/viewVendor';?>" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'" href="#" style="color: white; ">Testimoni</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'" href="<?php echo base_url().'Home/viewSejarah';?>" style="color: white; ">Hubungi Kami</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'" href="<?php echo base_url().'Home/viewcart';?>" style="color: white; ">Tentang Kami</a>
+            <a class="nav-link" onmouseover="this.style.color='red'" onmouseout="this.style.color='white'" href="" style="color: white; ">Tentang Kami</a>
           </li>
         </div>
         

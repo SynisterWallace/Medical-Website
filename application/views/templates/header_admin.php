@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#00CED9;">
   <div class="position"> 
-    <a class="navbar-brand" href="#">Medikal</a>
+    <a class="navbar-brand" href="#">Medilab</a>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon">test</span>

@@ -54,10 +54,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php foreach ($user as $key) { 
           if($key->email!=null) $first=$key->email;
           else $first='';
-          if($key->nama!=null) $last=$key->nama;
+          if($key->firstname!=null) $last=$key->firstname;
           else $last='';
-          if($key->alamat!=null) $uname=$key->alamat;
-          else$alamat="";
+          if($key->lastname!=null) $uname=$key->lastname;
+          else$lastname="";
           ?>
    
         <?php $str=explode('@',$this->session->userdata('_email'));
@@ -67,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="row">
             <div class="col">
               <small><label>Nama Depan<span style="color: red;"> *</span></label></small>
-              <input type="text" class="form-control" name="firstname" id="firsname" value="<?php echo $first;?>">
+              <input type="text" class="form-control" name="firstname" id="firstname" value="<?php echo $first;?>">
             </div>
             <div class="col">
               <small><label>Nama Belakang<span style="color: red;"> *</span></label></small>
@@ -86,13 +86,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col">
               <small><label>Email<span style="color: red;"> *</span></label></small>
               <input type="text" name="email" class="form-control" value="<?php echo $this->session->userdata('email');?>" >
-            </div>
-          </div>
-
-          <div class="row" style="padding-top: 1em;">
-            <div class="col">
-              <small><label>Nomor Telepon<span style="color: red;"> *</span></label></small>
-              <input type="text" name="nomor_telpon" class="form-control" value="<?php echo $this->session->userdata('nomor_telpon');?>" >
             </div>
           </div>
 
