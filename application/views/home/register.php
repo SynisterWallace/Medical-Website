@@ -16,10 +16,6 @@
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" name="password">
           </div>
-          <div class="form-group">
-            <label for="password">Nomor Telepon</label>
-            <input type="text" class="form-control" id="nomor_telpon" name="nomor_telpon">
-          </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="checkbox_policy">
             <label class="form-check-label" for="checkbox_policy">Privacy policy short description</label>

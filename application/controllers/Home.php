@@ -224,15 +224,13 @@ class Home extends CI_Controller{
 
 		$this->form_validation->set_rules('email', 'email', 'required|is_unique[user.email]');
 		$this->form_validation->set_rules('password', 'password', 'required');
-		$this->form_validation->set_rules('nomor_telpon', 'nomor_telpon', 'required');
 
 		if($this->form_validation->run() == FALSE){
 			redirect(base_url());
 		}else{
 			$data = [
 				"email" =>$this->input->post('email', TRUE),
-				"password" =>$this->input->post('password', TRUE),
-				"nomor_telpon" =>$this->input->post('nomor_telpon', TRUE),
+				"password" =>$this->input->post('password', TRUE)
 			];
 
 			$this->User_model->insert($data);
