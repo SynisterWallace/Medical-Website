@@ -88,6 +88,14 @@ class Home extends CI_Controller{
 		$this->load->view('templates/footer');
 	}
 
+	public function viewPembayaran(){
+		$data['pembayaran'] = $this->Admin_model->tampil_data_pembayaran()->result();
+		$data['title'] = 'View Pembayaran';
+		$this->load->view('templates/headerMember', $data);
+		$this->load->view('home/pembayaran');
+		$this->load->view('templates/footer');
+	}
+
 	public function viewprofile(){
 
 		$this->load->model('User_model');
