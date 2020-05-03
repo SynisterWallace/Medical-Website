@@ -72,14 +72,6 @@ class Home extends CI_Controller{
 		$this->load->view('templates/footer');	
 	}
 
-	public function viewPembayaran(){
-		$data['pembayaran'] = $this->Admin_model->tampil_data_pembayaran()->result();
-		$data['title'] = 'Pembayaran';
-		$this->load->view('templates/header', $data);
-		$this->load->view('home/pembayaran');
-		$this->load->view('templates/footer');	
-	}
-
 	public function viewMember(){
 		$data['title'] = 'Welcome';
 		$this->load->view('templates/headerMember', $data);
