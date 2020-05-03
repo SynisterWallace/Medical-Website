@@ -60,7 +60,7 @@ class Home extends CI_Controller{
 	public function viewService(){
 		$data['service'] = $this->Admin_model->tampil_data_service()->result();
 		$data['title'] = 'Servuce';
-		$this->load->view('templates/header', $data);
+		$this->load->view('templates/headserv', $data);
 		$this->load->view('home/service');
 		$this->load->view('templates/footer');	
 	}
@@ -83,7 +83,7 @@ class Home extends CI_Controller{
 		$data['pembayaran'] = $this->Admin_model->tampil_data_pembayaran()->result();
 		$data['dokter'] = $this->Dokter_model->tampil_data_dokter()->result();
 		$data['title'] = 'View Dokter';
-		$this->load->view('templates/headerMember', $data);
+		$this->load->view('templates/headserv', $data);
 		$this->load->view('home/doctorview');
 		$this->load->view('templates/footer');
 	}

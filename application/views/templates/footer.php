@@ -81,13 +81,13 @@
 
           <h4 class="text-uppercase font-weight-bold" style="color: white;">Informasi Kontak</h4>
           <p>
-            <a href="#!" style="color: white; font-size: 12px;">Jalan Legimo 18, Tunjungrejo, Lumajang, Jawa Timur</a>
+            <a href="#!" style="color: white; font-size: 12px;">Jawa Timur</a>
           </p>
           <p>
-            <a href="#!" style="color: white; font-size: 12px;">081236162626</a>
+            <a href="#!" style="color: white; font-size: 12px;">081616161616</a>
           </p>
           <p>
-            <a href="#!" style="color: white; font-size: 12px;">hectorclarkson@gmail.com</a>
+            <a href="#!" style="color: white; font-size: 12px;">helloworld@gmail.com</a>
           </p>
         </div>
 

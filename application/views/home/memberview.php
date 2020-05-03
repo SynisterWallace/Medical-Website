@@ -65,10 +65,10 @@
 
 
 
-    <div class="parallax-content baner-content" id="home">
+    <div class="parallax-content baner-content" id="home" >
         <div class="container" >
             <div class="row">
-              <div class="col-md-8 first-content" style="text-align:left; padding-top:6em;" >
+              <div class="col-md-8 first-content" style="text-align:left; padding-top:6em; margin-bottom:9em;" >
                 <?php $str=explode('@',$this->session->userdata('email'))?>
                 <h1 style="font-size: 50px; color:#FF8C00;">Selamat Datang <?php echo $str[0] ;  ?> </h1>
                 <span><em>Dental</em> Care</span>
