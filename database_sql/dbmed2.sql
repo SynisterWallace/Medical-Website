@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2020 at 08:47 AM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.1.33
+-- Generation Time: May 03, 2020 at 10:12 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -53,15 +53,16 @@ CREATE TABLE `dokter` (
   `email` varchar(30) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `nama` varchar(30) NOT NULL
+  `nama` varchar(30) NOT NULL,
+  `spesialis` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `dokter`
 --
 
-INSERT INTO `dokter` (`email`, `username`, `password`, `nama`) VALUES
-('drstrange@gmail.com', 'strange', '6666', 'Dr. Stephen Strange');
+INSERT INTO `dokter` (`email`, `username`, `password`, `nama`, `spesialis`) VALUES
+('drstrange@gmail.com', 'strange', '6666', 'Dr. Stephen Strange', 'corona');
 
 -- --------------------------------------------------------
 
