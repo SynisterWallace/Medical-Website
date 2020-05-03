@@ -40,7 +40,6 @@ class Dokter_model extends CI_model{
 	public function input_data($data,$table){
 		$this->db->insert($table,$data);
 	}
-
 	
 	function hapus_pelanggan($id_pasien){
 		$result=$this->db->query("DELETE FROM pelanggan WHERE id_pasien='$id_pasien'");
